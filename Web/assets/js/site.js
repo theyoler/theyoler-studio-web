@@ -5,15 +5,11 @@ const SITE = {
   // PENDIENTE: cambiar por la URL real de la página de Steam cuando exista el App ID.
   steamUrl: "https://store.steampowered.com/",
   steamReady: false,             // true cuando steamUrl apunte a la página del juego (y cambiar el texto de los botones de Steam)
-  // PENDIENTE: id del vídeo de YouTube del tráiler (lo que va tras "watch?v="). Vacío = marcador.
-  youtubeId: "",
   githubUrl: "https://github.com/theyoler/Fragments-of-olympus",
   email: "theyolerstudio@gmail.com",
-  // PENDIENTE: URL de envío del boletín (Buttondown, Mailchimp, Brevo…). Vacío = aviso "aún no disponible".
-  newsletterAction: "",
-  // PENDIENTE: redes. Las vacías se ocultan.
+  // Redes: las vacías se ocultan.
   socials: {
-    x: "",
+    x: "https://x.com/theyolerstudio",
     bluesky: "",
     youtube: "",
     tiktok: "",
@@ -94,9 +90,6 @@ function initLinks() {
     const url = SITE.socials[a.dataset.social];
     if (url) a.href = url; else a.hidden = true;
   });
-  document.querySelectorAll("[data-socials-empty]").forEach(el => {
-    el.hidden = Object.values(SITE.socials).some(Boolean);
-  });
   document.querySelectorAll("[data-year]").forEach(el => (el.textContent = new Date().getFullYear()));
 }
 
@@ -140,47 +133,9 @@ function initTopbar() {
   links.forEach((_, sec) => io.observe(sec));
 }
 
-
-/* ---------- Tráiler: carga YouTube solo al pulsar (más ligero y sin cookies hasta entonces) ---------- */
-function initVideo() {
-  const box = document.querySelector("[data-video]");
-  if (!box) return;
-  const ph = box.querySelector(".placeholder");
-  if (!SITE.youtubeId) return; // se queda el marcador
-  ph.hidden = true;
-  const thumb = document.createElement("img");
-  thumb.src = `https://i.ytimg.com/vi/${SITE.youtubeId}/maxresdefault.jpg`;
-  thumb.alt = "";
-  const play = document.createElement("button");
-  play.className = "video__play";
-  play.setAttribute("aria-label", "Play");
-  play.innerHTML = '<svg viewBox="0 0 24 24" fill="#1d2140"><path d="M6 4l15 8-15 8z"/></svg>';
-  play.addEventListener("click", () => {
-    box.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${SITE.youtubeId}?autoplay=1&rel=0"
-      title="Trailer" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
-  });
-  box.append(thumb, play);
-}
-
-/* ---------- Boletín ---------- */
-function initNewsletter() {
-  const form = document.querySelector("[data-newsletter]");
-  if (!form) return;
-  const msg = form.parentElement.querySelector(".form-msg");
-  if (SITE.newsletterAction) { form.action = SITE.newsletterAction; form.method = "post"; return; }
-  form.addEventListener("submit", e => {
-    e.preventDefault();
-    const lang = document.documentElement.lang;
-    msg.textContent = (lang !== "es" && window.I18N?.[lang]?.["fo.news.pending"])
-      || "El boletín aún no está abierto. Vuelve a pasarte pronto.";
-  });
-}
-
 document.addEventListener("DOMContentLoaded", () => {
   initLinks();
   initLang();
   initMenu();
   initTopbar();
-  initVideo();
-  initNewsletter();
 });

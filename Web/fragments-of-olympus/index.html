@@ -22,7 +22,6 @@
   <div class="wrap topbar__inner">
     <a class="brand" href="../" title="TheYoler Studio">← THEYOLER</a>
     <nav class="nav" id="nav">
-      <a href="#trailer" data-i18n="fo.nav.trailer">Tráiler</a>
       <a href="#juego" data-i18n="fo.nav.game">El juego</a>
       <a href="#personajes" data-i18n="fo.nav.chars">Personajes</a>
       <a href="#cooperativo" data-i18n="fo.nav.coop">Cooperativo</a>
@@ -50,33 +49,14 @@
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-9.96 9.1l5.36 2.22a2.8 2.8 0 0 1 1.6-.5h.16l2.38-3.46v-.05a3.77 3.77 0 1 1 3.77 3.77h-.09l-3.4 2.43v.13a2.83 2.83 0 0 1-5.6.56L2.4 14.6A10 10 0 1 0 12 2zm-4.1 15.2-1.23-.51a2.13 2.13 0 1 0 1.17-2.9l1.27.53a1.57 1.57 0 1 1-1.2 2.9zm9.5-7.63a2.51 2.51 0 1 0-2.5 2.5 2.51 2.51 0 0 0 2.5-2.5zm-4.4 0a1.89 1.89 0 1 1 1.9 1.88 1.89 1.89 0 0 1-1.9-1.88z"/></svg>
             <span data-i18n="common.steamsoon">Página de Steam: próximamente</span>
           </a>
-          <a class="btn" href="#trailer">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4l13 8-13 8z"/></svg>
-            <span data-i18n="fo.hero.watch">Ver el tráiler</span>
-          </a>
         </div>
         <p class="fo-hero__meta"><span data-i18n="fo.hero.meta">PC (Steam) · 1–4 jugadores online · Próximamente</span></p>
       </div>
     </div>
   </section>
 
-  <!-- TRÁILER -->
-  <section class="section" id="trailer">
-    <div class="wrap">
-      <div class="section__head">
-        <h2 data-i18n="fo.trailer.title">Tráiler</h2>
-      </div>
-      <div class="video" data-video>
-        <div class="placeholder">
-          <strong style="font-size:1.1rem" data-i18n="fo.trailer.todo">Aquí irá el tráiler de YouTube</strong>
-          <span data-i18n="fo.trailer.howto">Pon el id del vídeo en <code>youtubeId</code> dentro de assets/js/site.js</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- QUÉ ES -->
-  <section class="section section--alt about" id="juego">
+  <section class="section about" id="juego">
     <div class="wrap grid grid--2">
       <div>
         <h2 data-i18n="fo.about.title">De qué va</h2>
@@ -88,11 +68,10 @@
   </section>
 
   <!-- PERSONAJES -->
-  <section class="section" id="personajes">
+  <section class="section section--alt" id="personajes">
     <div class="wrap">
       <div class="section__head">
         <h2 data-i18n="fo.chars.title">Personajes</h2>
-        <p data-i18n="fo.chars.text">Imágenes provisionales sacadas de los modelos del juego.</p>
       </div>
 
       <h3 class="chars-group" data-i18n="fo.chars.team">La Égida y los dioses</h3>
@@ -111,22 +90,6 @@
             <span class="char__role" data-i18n="fo.chars.kaelen.r">Tanque · Jefe del Coliseo</span>
             <h3>Kaelen</h3>
             <p data-i18n="fo.chars.kaelen.d">Centauro guerrero que defiende el Coliseo con su lanza doble. Gánale el duelo y se unirá a la Égida.</p>
-          </div>
-        </article>
-        <article class="card char">
-          <div class="char__img"><div class="placeholder"><strong data-i18n="fo.chars.athena.ph">Retrato de Atenea</strong><span data-i18n="fo.chars.modelph">modelo en curso</span></div></div>
-          <div class="char__body">
-            <span class="char__role" data-i18n="fo.chars.athena.r">Diosa · Guía</span>
-            <h3 data-i18n="fo.chars.athena.n">Atenea</h3>
-            <p data-i18n="fo.chars.athena.d">Diosa de la estrategia. Fundó la Égida para reconstruir el Olimpo de su padre, aunque eso la enfrente a él.</p>
-          </div>
-        </article>
-        <article class="card char">
-          <div class="char__img"><div class="placeholder"><strong data-i18n="fo.chars.zeus.ph">Retrato de Zeus</strong><span data-i18n="fo.chars.modelph">modelo en curso</span></div></div>
-          <div class="char__body">
-            <span class="char__role" data-i18n="fo.chars.zeus.r">Dios · El desterrado</span>
-            <h3 data-i18n="fo.chars.zeus.n">Zeus</h3>
-            <p data-i18n="fo.chars.zeus.d">Expulsado por la catástrofe que él mismo provocó, se aferra a su núcleo y no piensa entregarlo.</p>
           </div>
         </article>
       </div>
@@ -157,14 +120,6 @@
             <p data-i18n="fo.chars.crab.d">Metro y medio de caparazón con pinzas que golpean como mazas.</p>
           </div>
         </article>
-        <article class="card char">
-          <div class="char__img"><div class="placeholder"><strong data-i18n="fo.chars.kronos.ph">Retrato de Cronos</strong><span data-i18n="fo.chars.modelph">modelo en curso</span></div></div>
-          <div class="char__body">
-            <span class="char__role" data-i18n="fo.chars.kronos.r">Titán · Amenaza final</span>
-            <h3 data-i18n="fo.chars.kronos.n">Cronos y los Titanes</h3>
-            <p data-i18n="fo.chars.kronos.d">Aprovecharon el caos para robar núcleos del Olimpo. Nadie sabe aún para qué los quieren.</p>
-          </div>
-        </article>
       </div>
     </div>
   </section>
@@ -188,18 +143,12 @@
     </div>
   </section>
 
-  <!-- BOLETÍN Y REDES -->
+  <!-- REDES -->
   <section class="section" id="noticias">
     <div class="wrap">
       <div class="card newsletter">
-        <h2 data-i18n="fo.news.title">Boletín</h2>
-        <p data-i18n="fo.news.text">Te escribiré cuando haya demo, pruebas abiertas o fecha de salida. Nada más.</p>
-        <form data-newsletter>
-          <label class="visually-hidden" for="email" data-i18n="fo.news.label">Correo electrónico</label>
-          <input id="email" name="email" type="email" required autocomplete="email" placeholder="tu@correo.com" data-i18n-attr="placeholder:fo.news.ph">
-          <button class="btn btn--gold" type="submit" data-i18n="fo.news.btn">Avisadme</button>
-        </form>
-        <p class="form-msg" aria-live="polite"></p>
+        <h2 data-i18n="fo.news.title">Novedades</h2>
+        <p data-i18n="fo.news.text">Voy contando cómo avanza el desarrollo en X.</p>
         <div class="socials">
           <a data-link="steam" href="#" target="_blank" rel="noopener">Steam</a>
           <a data-social="discord" href="#" target="_blank" rel="noopener">Discord</a>
@@ -210,7 +159,6 @@
           <a data-social="instagram" href="#" target="_blank" rel="noopener">Instagram</a>
           <a data-link="github" href="#" target="_blank" rel="noopener">GitHub</a>
         </div>
-        <p data-socials-empty style="margin:14px 0 0"><span class="todo" data-i18n="common.todo">Pendiente</span> <span data-i18n="common.socials.todo">Añadir las redes sociales en assets/js/site.js.</span></p>
       </div>
     </div>
   </section>
@@ -223,7 +171,6 @@
       <div>
         <h3 data-i18n="fo.footer.press">Prensa</h3>
         <ul>
-          <li><span data-i18n="fo.footer.presskit">Kit de prensa (logo, capturas, ficha)</span> <span class="todo" data-i18n="common.todo">Pendiente</span></li>
           <li><a data-link="email" href="#">theyolerstudio@gmail.com</a></li>
           <li><span data-i18n="fo.footer.dev">Desarrollo:</span> <a href="../">TheYoler Studio</a></li>
           <li><span data-i18n="fo.footer.platforms">Plataforma: PC (Steam)</span></li>
