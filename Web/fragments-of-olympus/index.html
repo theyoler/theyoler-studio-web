@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="fo.title">Fragments of Olympus — Acción cooperativa en la Grecia mitológica</title>
+  <meta name="description" content="El Olimpo ha estallado. Únete a la Égida de Atenea y recupera sus fragmentos en un juego de acción cooperativo online para hasta 4 jugadores.">
+  <meta property="og:title" content="Fragments of Olympus">
+  <meta property="og:description" content="Acción cooperativa online en la Grecia mitológica. Añádelo a tu lista de deseados de Steam.">
+  <meta property="og:image" content="/assets/img/fragments/og.jpg">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#f7d7a8">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/i18n.js" defer></script>
+  <script src="../assets/js/site.js" defer></script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap topbar__inner">
+    <a class="brand" href="../" title="TheYoler Studio">← THEYOLER</a>
+    <nav class="nav" id="nav">
+      <a href="#trailer" data-i18n="fo.nav.trailer">Tráiler</a>
+      <a href="#juego" data-i18n="fo.nav.game">El juego</a>
+      <a href="#galeria" data-i18n="fo.nav.gallery">Galería</a>
+      <a href="#personajes" data-i18n="fo.nav.chars">Personajes</a>
+      <a href="#cooperativo" data-i18n="fo.nav.coop">Cooperativo</a>
+      <a href="#prensa" data-i18n="fo.nav.press">Prensa</a>
+    </nav>
+    <select class="lang" aria-label="Idioma / Language"></select>
+    <button class="menu-btn" aria-controls="nav" aria-expanded="false" aria-label="Menú"><span></span></button>
+  </div>
+</header>
+
+<main>
+  <!-- PORTADA -->
+  <section class="fo-hero">
+    <div class="fo-hero__bg">
+      <!-- PENDIENTE: cambiar por el key art cuando exista (ver Lanzamiento/03 en la bóveda). -->
+      <img src="../assets/img/fragments/hero.jpg" alt="Santuario en ruinas flotando entre las nubes del Olimpo al atardecer" width="1440" height="810" fetchpriority="high">
+    </div>
+    <div class="wrap">
+      <div class="fo-hero__content">
+        <!-- PENDIENTE: cambiar el título en texto por el logo en PNG transparente cuando esté. -->
+        <h1 class="logo-title">Fragments<span>of Olympus</span></h1>
+        <p class="fo-hero__tagline" data-i18n="fo.hero.tagline">El Olimpo ha estallado en mil pedazos. Reúne a la Égida, lucha junto a tus amigos y devuelve a los dioses su hogar.</p>
+        <div class="actions">
+          <a class="btn btn--gold" data-link="steam" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-9.96 9.1l5.36 2.22a2.8 2.8 0 0 1 1.6-.5h.16l2.38-3.46v-.05a3.77 3.77 0 1 1 3.77 3.77h-.09l-3.4 2.43v.13a2.83 2.83 0 0 1-5.6.56L2.4 14.6A10 10 0 1 0 12 2zm-4.1 15.2-1.23-.51a2.13 2.13 0 1 0 1.17-2.9l1.27.53a1.57 1.57 0 1 1-1.2 2.9zm9.5-7.63a2.51 2.51 0 1 0-2.5 2.5 2.51 2.51 0 0 0 2.5-2.5zm-4.4 0a1.89 1.89 0 1 1 1.9 1.88 1.89 1.89 0 0 1-1.9-1.88z"/></svg>
+            <span data-i18n="fo.hero.wishlist">Añadir a la lista de deseados</span>
+          </a>
+          <a class="btn" href="#trailer">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4l13 8-13 8z"/></svg>
+            <span data-i18n="fo.hero.watch">Ver el tráiler</span>
+          </a>
+        </div>
+        <p class="fo-hero__meta"><span data-i18n="fo.hero.meta">PC (Steam) · 1–4 jugadores online · Próximamente</span>
+          <span class="todo" data-steam-pending data-i18n="fo.hero.steamtodo">Enlace de Steam provisional</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRÁILER -->
+  <section class="section" id="trailer">
+    <div class="wrap">
+      <div class="section__head">
+        <span class="eyebrow" data-i18n="fo.trailer.eyebrow">Tráiler</span>
+        <h2 data-i18n="fo.trailer.title">La caída del Olimpo</h2>
+      </div>
+      <div class="video" data-video>
+        <div class="placeholder">
+          <strong style="font-size:1.1rem" data-i18n="fo.trailer.todo">Aquí irá el tráiler de YouTube</strong>
+          <span data-i18n="fo.trailer.howto">Pon el id del vídeo en <code>youtubeId</code> dentro de assets/js/site.js</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUÉ ES -->
+  <section class="section section--alt about" id="juego">
+    <div class="wrap grid grid--2">
+      <div>
+        <span class="eyebrow" data-i18n="fo.about.eyebrow">El juego</span>
+        <h2 data-i18n="fo.about.title">Recupera los fragmentos del Olimpo</h2>
+        <p data-i18n="fo.about.p1">En plena Titanomaquia, el choque entre Zeus y Cronos desató una explosión de poder que hizo pedazos el Olimpo. Sus fragmentos flotan ahora a la deriva, y en cada uno late un núcleo que los monstruos custodian y los titanes codician.</p>
+        <p data-i18n="fo.about.p2">Atenea, diosa de la estrategia, ha reunido a un grupo de héroes: la <strong>Égida</strong>. Desde la cumbre del Olimpo viajarás a playas, coliseos y cuevas marinas para enfrentarte a sus guardianes y traer de vuelta cada núcleo.</p>
+        <blockquote data-i18n="fo.about.quote">Acción en tiempo real, jefes con varias fases y un equipo que crece contigo… solo o con hasta tres amigos.</blockquote>
+      </div>
+      <img class="about__img" src="../assets/img/fragments/shot-lobby.jpg" alt="Dos héroes en la cumbre del Olimpo, delante de la Gema" width="1200" height="675" loading="lazy">
+    </div>
+  </section>
+
+  <!-- CARACTERÍSTICAS -->
+  <section class="section" id="caracteristicas">
+    <div class="wrap">
+      <div class="section__head">
+        <span class="eyebrow" data-i18n="fo.feat.eyebrow">Características</span>
+        <h2 data-i18n="fo.feat.title">Lo que te espera</h2>
+      </div>
+      <div class="grid grid--3">
+        <article class="card feature">
+          <div class="feature__icon" aria-hidden="true">⚔️</div>
+          <h3 data-i18n="fo.feat.1.t">Combate ágil</h3>
+          <p data-i18n="fo.feat.1.d">Combos, esquivas con dash, ataques en área y una definitiva que cambia el curso de la batalla.</p>
+        </article>
+        <article class="card feature">
+          <div class="feature__icon" aria-hidden="true">🛡️</div>
+          <h3 data-i18n="fo.feat.2.t">Forma tu Égida</h3>
+          <p data-i18n="fo.feat.2.d">Recluta a nuevos héroes, como el centauro Kaelen, y elige con quién luchas hablando con Atenea.</p>
+        </article>
+        <article class="card feature">
+          <div class="feature__icon" aria-hidden="true">🐙</div>
+          <h3 data-i18n="fo.feat.3.t">Jefes legendarios</h3>
+          <p data-i18n="fo.feat.3.d">Escila, Kaelen y, más adelante, titanes y el propio Zeus. Peleas épicas con fases y ataques que hay que aprender.</p>
+        </article>
+        <article class="card feature">
+          <div class="feature__icon" aria-hidden="true">🔨</div>
+          <h3 data-i18n="fo.feat.4.t">Forja y botín</h3>
+          <p data-i18n="fo.feat.4.d">Consigue objetos en cada misión y mejóralos en la forja del herrero para hacer más fuerte a tu equipo.</p>
+        </article>
+        <article class="card feature">
+          <div class="feature__icon" aria-hidden="true">🏛️</div>
+          <h3 data-i18n="fo.feat.5.t">La cumbre del Olimpo</h3>
+          <p data-i18n="fo.feat.5.d">Tu base entre las nubes: mercado, arena de entrenamiento, forja, oráculo y la Gema desde la que viajas a cada fragmento.</p>
+        </article>
+        <article class="card feature">
+          <div class="feature__icon" aria-hidden="true">🎮</div>
+          <h3 data-i18n="fo.feat.6.t">Mando y 7 idiomas</h3>
+          <p data-i18n="fo.feat.6.d">Compatible con mando (con vibración) y teclado. Textos en español, inglés, portugués, alemán, francés, chino y japonés.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section class="section section--alt" id="galeria">
+    <div class="wrap">
+      <div class="section__head">
+        <span class="eyebrow" data-i18n="fo.gallery.eyebrow">Galería</span>
+        <h2 data-i18n="fo.gallery.title">Capturas</h2>
+        <p><span class="todo" data-i18n="common.todo">Pendiente</span> <span data-i18n="fo.gallery.todo">Capturas provisionales del desarrollo. Cambiar por capturas finales a 1920×1080 con el HUD definitivo.</span></p>
+      </div>
+      <div class="gallery">
+        <button data-full="../assets/img/fragments/hero.jpg"><img src="../assets/img/fragments/hero.jpg" alt="El santuario flotante del menú principal" loading="lazy" width="1440" height="810"></button>
+        <button data-full="../assets/img/fragments/shot-lobby.jpg"><img src="../assets/img/fragments/shot-lobby.jpg" alt="Héroes en la cumbre del Olimpo" loading="lazy" width="1200" height="675"></button>
+        <button data-full="../assets/img/fragments/shot-beach.jpg"><img src="../assets/img/fragments/shot-beach.jpg" alt="La playa de las arpías vista desde el aire" loading="lazy" width="1400" height="788"></button>
+        <button data-full="../assets/img/fragments/shot-cave2.jpg"><img src="../assets/img/fragments/shot-cave2.jpg" alt="Escila emerge en la cueva marina" loading="lazy" width="1280" height="720"></button>
+        <button data-full="../assets/img/fragments/shot-cave.jpg"><img src="../assets/img/fragments/shot-cave.jpg" alt="La guarida de Escila desde arriba" loading="lazy" width="960" height="540"></button>
+        <button data-full="../assets/img/fragments/shot-colosseum.jpg"><img src="../assets/img/fragments/shot-colosseum.jpg" alt="Hoplitas en la arena del Coliseo" loading="lazy" width="1280" height="720"></button>
+        <div class="placeholder"><strong data-i18n="fo.gallery.slot">Captura de combate en grupo</strong><span data-i18n="fo.gallery.slothint">con efectos y HUD final</span></div>
+        <div class="placeholder"><strong data-i18n="fo.gallery.slot2">Captura del cooperativo</strong><span data-i18n="fo.gallery.slothint">con efectos y HUD final</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERSONAJES -->
+  <section class="section" id="personajes">
+    <div class="wrap">
+      <div class="section__head">
+        <span class="eyebrow" data-i18n="fo.chars.eyebrow">Dioses, héroes y monstruos</span>
+        <h2 data-i18n="fo.chars.title">Personajes</h2>
+        <p data-i18n="fo.chars.text">Imágenes provisionales sacadas de los modelos del juego.</p>
+      </div>
+
+      <h3 class="chars-group" data-i18n="fo.chars.team">La Égida y los dioses</h3>
+      <div class="chars">
+        <article class="card char">
+          <div class="char__img"><img src="../assets/img/fragments/char-gladiator.jpg" alt="El gladiador" loading="lazy" width="560" height="560"></div>
+          <div class="char__body">
+            <span class="char__role" data-i18n="fo.chars.glad.r">Héroe</span>
+            <h3 data-i18n="fo.chars.glad.n">El Gladiador</h3>
+            <p data-i18n="fo.chars.glad.d">Luchador de arena curtido en mil combates. Rápido, directo y siempre en primera línea.</p>
+          </div>
+        </article>
+        <article class="card char">
+          <div class="char__img"><img src="../assets/img/fragments/char-kaelen.jpg" alt="Kaelen, el centauro" loading="lazy" width="640" height="640"></div>
+          <div class="char__body">
+            <span class="char__role" data-i18n="fo.chars.kaelen.r">Tanque · Jefe del Coliseo</span>
+            <h3>Kaelen</h3>
+            <p data-i18n="fo.chars.kaelen.d">Centauro guerrero que defiende el Coliseo con su lanza doble. Gánale el duelo y se unirá a la Égida.</p>
+          </div>
+        </article>
+        <article class="card char">
+          <div class="char__img"><div class="placeholder"><strong data-i18n="fo.chars.athena.ph">Retrato de Atenea</strong><span data-i18n="fo.chars.modelph">modelo en curso</span></div></div>
+          <div class="char__body">
+            <span class="char__role" data-i18n="fo.chars.athena.r">Diosa · Guía</span>
+            <h3 data-i18n="fo.chars.athena.n">Atenea</h3>
+            <p data-i18n="fo.chars.athena.d">Diosa de la estrategia. Fundó la Égida para reconstruir el Olimpo de su padre, aunque eso la enfrente a él.</p>
+          </div>
+        </article>
+        <article class="card char">
+          <div class="char__img"><div class="placeholder"><strong data-i18n="fo.chars.zeus.ph">Retrato de Zeus</strong><span data-i18n="fo.chars.modelph">modelo en curso</span></div></div>
+          <div class="char__body">
+            <span class="char__role" data-i18n="fo.chars.zeus.r">Dios · El desterrado</span>
+            <h3 data-i18n="fo.chars.zeus.n">Zeus</h3>
+            <p data-i18n="fo.chars.zeus.d">Expulsado por la catástrofe que él mismo provocó, se aferra a su núcleo y no piensa entregarlo.</p>
+          </div>
+        </article>
+      </div>
+
+      <h3 class="chars-group" data-i18n="fo.chars.foes">Guardianes de los fragmentos</h3>
+      <div class="chars">
+        <article class="card char">
+          <div class="char__img"><img src="../assets/img/fragments/char-scylla.jpg" alt="Escila" loading="lazy" width="640" height="640"></div>
+          <div class="char__body">
+            <span class="char__role" data-i18n="fo.chars.scylla.r">Jefa · Cueva marina</span>
+            <h3 data-i18n="fo.chars.scylla.n">Escila</h3>
+            <p data-i18n="fo.chars.scylla.d">El terror de los estrechos. Tentáculos, fauces y una mirada de serpiente que no conviene sostener.</p>
+          </div>
+        </article>
+        <article class="card char">
+          <div class="char__img"><img src="../assets/img/fragments/char-harpy.jpg" alt="Arpía marina" loading="lazy" width="640" height="640"></div>
+          <div class="char__body">
+            <span class="char__role" data-i18n="fo.chars.harpy.r">Enemiga · Playa</span>
+            <h3 data-i18n="fo.chars.harpy.n">Arpía marina</h3>
+            <p data-i18n="fo.chars.harpy.d">Nunca toca el suelo: vuela sobre la playa y cae en picado con su lanza.</p>
+          </div>
+        </article>
+        <article class="card char">
+          <div class="char__img"><img src="../assets/img/fragments/char-crab.jpg" alt="Cangrejo guardián" loading="lazy" width="640" height="640"></div>
+          <div class="char__body">
+            <span class="char__role" data-i18n="fo.chars.crab.r">Enemigo · Costa</span>
+            <h3 data-i18n="fo.chars.crab.n">Cangrejo guardián</h3>
+            <p data-i18n="fo.chars.crab.d">Metro y medio de caparazón con pinzas que golpean como mazas.</p>
+          </div>
+        </article>
+        <article class="card char">
+          <div class="char__img"><div class="placeholder"><strong data-i18n="fo.chars.kronos.ph">Retrato de Cronos</strong><span data-i18n="fo.chars.modelph">modelo en curso</span></div></div>
+          <div class="char__body">
+            <span class="char__role" data-i18n="fo.chars.kronos.r">Titán · Amenaza final</span>
+            <h3 data-i18n="fo.chars.kronos.n">Cronos y los Titanes</h3>
+            <p data-i18n="fo.chars.kronos.d">Aprovecharon el caos para robar núcleos del Olimpo. Nadie sabe aún para qué los quieren.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- COOPERATIVO -->
+  <section class="section coop" id="cooperativo">
+    <div class="wrap grid grid--2">
+      <div>
+        <span class="eyebrow" data-i18n="fo.coop.eyebrow">Multijugador</span>
+        <h2 data-i18n="fo.coop.title">Mejor con amigos</h2>
+        <p data-i18n="fo.coop.text">Cada misión se puede jugar sola o en cooperativo online con hasta cuatro jugadores. Invita a tus amigos de Steam y entrad juntos en el fragmento.</p>
+        <ul class="checklist">
+          <li data-i18n="fo.coop.1">Hasta 4 jugadores online a través de Steam.</li>
+          <li data-i18n="fo.coop.2">Los enemigos se vuelven más duros cuantos más sois.</li>
+          <li data-i18n="fo.coop.3">Tu progreso y tu equipo se guardan en tu perfil.</li>
+          <li data-i18n="fo.coop.4">También se puede jugar solo y sin conexión.</li>
+        </ul>
+      </div>
+      <div class="coop__slots" aria-hidden="true">
+        <div class="coop__slot">I</div><div class="coop__slot">II</div><div class="coop__slot">III</div><div class="coop__slot">IV</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOLETÍN Y REDES -->
+  <section class="section" id="noticias">
+    <div class="wrap">
+      <div class="card newsletter">
+        <span class="eyebrow" data-i18n="fo.news.eyebrow">No te pierdas nada</span>
+        <h2 data-i18n="fo.news.title">Sigue el desarrollo</h2>
+        <p data-i18n="fo.news.text">Apúntate para enterarte de la demo, las pruebas abiertas y el lanzamiento.</p>
+        <form data-newsletter>
+          <label class="visually-hidden" for="email" style="position:absolute;left:-9999px" data-i18n="fo.news.label">Correo electrónico</label>
+          <input id="email" name="email" type="email" required autocomplete="email" placeholder="tu@correo.com" data-i18n-attr="placeholder:fo.news.ph">
+          <button class="btn btn--gold" type="submit" data-i18n="fo.news.btn">Avisadme</button>
+        </form>
+        <p class="form-msg" aria-live="polite"></p>
+        <div class="socials">
+          <a data-link="steam" href="#" target="_blank" rel="noopener">Steam</a>
+          <a data-social="discord" href="#" target="_blank" rel="noopener">Discord</a>
+          <a data-social="x" href="#" target="_blank" rel="noopener">X / Twitter</a>
+          <a data-social="bluesky" href="#" target="_blank" rel="noopener">Bluesky</a>
+          <a data-social="youtube" href="#" target="_blank" rel="noopener">YouTube</a>
+          <a data-social="tiktok" href="#" target="_blank" rel="noopener">TikTok</a>
+          <a data-social="instagram" href="#" target="_blank" rel="noopener">Instagram</a>
+          <a data-link="github" href="#" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <p data-socials-empty style="margin:14px 0 0"><span class="todo" data-i18n="common.todo">Pendiente</span> <span data-i18n="common.socials.todo">Añadir las redes sociales en assets/js/site.js.</span></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- PIE: prensa, contacto y créditos -->
+<footer class="footer" id="prensa">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <h3 data-i18n="fo.footer.press">Prensa</h3>
+        <ul>
+          <li><span data-i18n="fo.footer.presskit">Kit de prensa (logo, capturas, ficha)</span> <span class="todo" data-i18n="common.todo">Pendiente</span></li>
+          <li><a data-link="email" href="#">contacto@theyoler.studio</a></li>
+          <li><span data-i18n="fo.footer.dev">Desarrollo:</span> <a href="../">TheYoler Studio</a></li>
+          <li><span data-i18n="fo.footer.platforms">Plataforma: PC (Steam)</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3 data-i18n="fo.footer.credits">Créditos</h3>
+        <ul class="credits">
+          <li data-i18n="fo.footer.made">Juego, arte, código y música: TheYoler Studio.</li>
+          <li data-i18n="fo.footer.fonts">Tipografías Cinzel y Marcellus (SIL Open Font License).</li>
+          <li data-i18n="fo.footer.tech">Hecho con Unity, Blender, FishNet, Steamworks y PlayFab.</li>
+        </ul>
+      </div>
+      <div>
+        <h3 data-i18n="fo.footer.cc0">Recursos CC0</h3>
+        <ul class="credits">
+          <li data-i18n="fo.footer.cc0text">Aunque no lo exigen, agradecemos estos recursos de dominio público:</li>
+          <li><span data-i18n="fo.footer.sfx">Sonidos:</span> Kenney · creatorassets.com · OpenGameArt (LokiF, qubodup, Joth, Independent.nu, artisticdude, StarNinjas, rubberduck, MouseBYTE, fvcalderan, KarateStudios, pauliuw, HaelDB, Sudocolon, Listener, PWL, Spring Spring)</li>
+          <li><span data-i18n="fo.footer.models">Modelos:</span> Quaternius (Universal Base Characters, Modular Outfits Fantasy, Medieval Weapons)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__legal">
+      <span>© <span data-year>2026</span> TheYoler Studio · Fragments of Olympus</span>
+      <span data-i18n="fo.footer.steam">Steam y el logo de Steam son marcas de Valve Corporation.</span>
+    </div>
+  </div>
+</footer>
+
+<dialog class="lightbox" aria-label="Captura">
+  <button class="lightbox__close" aria-label="Cerrar">×</button>
+  <img src="" alt="">
+</dialog>
+
+</body>
+</html>

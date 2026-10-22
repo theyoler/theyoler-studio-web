@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="studio.title">TheYoler Studio — Estudio independiente de videojuegos</title>
+  <meta name="description" content="TheYoler Studio es un estudio independiente de videojuegos. Ahora desarrollamos Fragments of Olympus, acción cooperativa en la Grecia mitológica.">
+  <meta property="og:title" content="TheYoler Studio">
+  <meta property="og:description" content="Estudio independiente de videojuegos. En desarrollo: Fragments of Olympus.">
+  <meta property="og:image" content="/assets/img/fragments/og.jpg">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#161a35">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/i18n.js" defer></script>
+  <script src="assets/js/site.js" defer></script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap topbar__inner">
+    <a class="brand" href="./" aria-label="TheYoler Studio">THEYOLER <small>studio</small></a>
+    <nav class="nav" id="nav">
+      <a href="#juegos" data-i18n="studio.nav.games">Juegos</a>
+      <a href="#estudio" data-i18n="studio.nav.studio">El estudio</a>
+      <a href="#contacto" data-i18n="studio.nav.contact">Contacto</a>
+    </nav>
+    <select class="lang" aria-label="Idioma / Language"></select>
+    <button class="menu-btn" aria-controls="nav" aria-expanded="false" aria-label="Menú"><span></span></button>
+  </div>
+</header>
+
+<main>
+  <section class="studio-hero">
+    <div class="wrap">
+      <h1 style="margin:0"><img class="studio-hero__logo" src="assets/img/studio/logo.png" alt="TheYoler Studio" width="900" height="308"></h1>
+      <p data-i18n="studio.hero.text">Estudio independiente de videojuegos. Hacemos juegos de acción con mucho color, mitos antiguos y amigos con los que jugarlos.</p>
+      <a class="btn btn--gold" href="#juegos" data-i18n="studio.hero.cta">Ver nuestros juegos</a>
+    </div>
+  </section>
+
+  <section class="section" id="juegos">
+    <div class="wrap">
+      <div class="section__head">
+        <span class="eyebrow" data-i18n="studio.games.eyebrow">Nuestros juegos</span>
+        <h2 data-i18n="studio.games.title">Juegos en desarrollo</h2>
+      </div>
+
+      <article class="card game-card">
+        <a class="game-card__media" href="fragments-of-olympus/">
+          <img src="assets/img/fragments/card.jpg" alt="Ruinas flotantes del Olimpo al atardecer en Fragments of Olympus" width="900" height="675" loading="lazy">
+          <p class="game-card__title">Fragments <small>of Olympus</small></p>
+        </a>
+        <div class="game-card__body">
+          <div class="tags">
+            <span class="tag tag--live" data-i18n="studio.fo.status">En desarrollo</span>
+            <span class="tag">PC · Steam</span>
+            <span class="tag" data-i18n="studio.fo.coop">Cooperativo online</span>
+          </div>
+          <h3 data-i18n="studio.fo.title">Fragments of Olympus</h3>
+          <p data-i18n="studio.fo.text">El Olimpo ha estallado en pedazos. Únete a la Égida de Atenea y recupera los fragmentos luchando en tiempo real, solo o con hasta tres amigos, contra los monstruos y titanes de la Grecia mitológica.</p>
+          <div class="actions">
+            <a class="btn btn--gold" href="fragments-of-olympus/" data-i18n="studio.fo.more">Descubrir el juego</a>
+            <a class="btn" data-link="steam" href="#" target="_blank" rel="noopener" data-i18n="common.wishlist">Lista de deseados</a>
+          </div>
+        </div>
+      </article>
+
+      <div class="card future-card" style="margin-top:28px">
+        <p style="margin:0" data-i18n="studio.games.next">Próximos proyectos… <em>los dioses aún no han decidido.</em></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="estudio">
+    <div class="wrap grid grid--2">
+      <div>
+        <span class="eyebrow" data-i18n="studio.about.eyebrow">Quiénes somos</span>
+        <h2 data-i18n="studio.about.title">El estudio</h2>
+        <p data-i18n="studio.about.p1">TheYoler Studio es un estudio independiente con base en España. Diseñamos, programamos, modelamos y componemos nuestros juegos casi de principio a fin, con herramientas como Unity y Blender.</p>
+        <p data-i18n="studio.about.p2">Nos gustan los juegos que se disfrutan en compañía, los mundos con historia y el arte con personalidad.</p>
+        <p><span class="todo" data-i18n="common.todo">Pendiente</span> <span data-i18n="studio.about.todo">Foto o ilustración del equipo y una frase de quién está detrás.</span></p>
+      </div>
+      <div class="placeholder" style="min-height:300px">
+        <strong data-i18n="studio.about.photo">Foto del equipo / del estudio</strong>
+        <span>assets/img/studio/team.jpg</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contacto">
+    <div class="wrap" style="text-align:center">
+      <span class="eyebrow" data-i18n="studio.contact.eyebrow">Hablemos</span>
+      <h2 data-i18n="studio.contact.title">Contacto</h2>
+      <p data-i18n="studio.contact.text">Prensa, creadores de contenido, colaboraciones o simplemente para saludar:</p>
+      <p><a class="btn btn--ink" data-link="email" href="#">contacto@theyoler.studio</a></p>
+      <div class="socials" style="justify-content:center;margin-top:24px">
+        <a data-social="x" href="#" target="_blank" rel="noopener">X / Twitter</a>
+        <a data-social="bluesky" href="#" target="_blank" rel="noopener">Bluesky</a>
+        <a data-social="youtube" href="#" target="_blank" rel="noopener">YouTube</a>
+        <a data-social="tiktok" href="#" target="_blank" rel="noopener">TikTok</a>
+        <a data-social="instagram" href="#" target="_blank" rel="noopener">Instagram</a>
+        <a data-social="discord" href="#" target="_blank" rel="noopener">Discord</a>
+        <a data-link="github" href="#" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <p data-socials-empty style="margin-top:14px"><span class="todo" data-i18n="common.todo">Pendiente</span> <span data-i18n="common.socials.todo">Añadir las redes sociales en assets/js/site.js.</span></p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <h3>TheYoler Studio</h3>
+        <p class="credits" data-i18n="studio.footer.text">Estudio independiente de videojuegos.</p>
+      </div>
+      <div>
+        <h3 data-i18n="studio.nav.games">Juegos</h3>
+        <ul><li><a href="fragments-of-olympus/">Fragments of Olympus</a></li></ul>
+      </div>
+      <div>
+        <h3 data-i18n="studio.nav.contact">Contacto</h3>
+        <ul>
+          <li><a data-link="email" href="#">contacto@theyoler.studio</a></li>
+          <li><a href="fragments-of-olympus/#prensa" data-i18n="common.presskit">Kit de prensa</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__legal">
+      <span>© <span data-year>2026</span> TheYoler Studio</span>
+      <span data-i18n="common.legal.todo">Aviso legal y privacidad: pendiente</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
