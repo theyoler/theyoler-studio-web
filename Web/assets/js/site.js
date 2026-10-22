@@ -4,7 +4,7 @@
 const SITE = {
   // PENDIENTE: cambiar por la URL real de la página de Steam cuando exista el App ID.
   steamUrl: "https://store.steampowered.com/",
-  steamReady: false,             // true cuando steamUrl apunte a la página del juego
+  steamReady: false,             // true cuando steamUrl apunte a la página del juego (y cambiar el texto de los botones de Steam)
   // PENDIENTE: id del vídeo de YouTube del tráiler (lo que va tras "watch?v="). Vacío = marcador.
   youtubeId: "",
   githubUrl: "https://github.com/theyoler/Fragments-of-olympus",
@@ -77,8 +77,13 @@ function initLang() {
 /* ---------- Enlaces configurables ---------- */
 function initLinks() {
   document.querySelectorAll('[data-link="steam"]').forEach(a => {
-    a.href = SITE.steamUrl;
-    if (!SITE.steamReady) a.title = "Enlace provisional: la página de Steam aún no está publicada";
+    if (SITE.steamReady) { a.href = SITE.steamUrl; return; }
+    // Sin página aún: los botones se quedan como aviso "próximamente" y el enlace de las redes se oculta
+    if (!a.classList.contains("btn")) { a.hidden = true; return; }
+    a.removeAttribute("href");
+    a.removeAttribute("target");
+    a.setAttribute("aria-disabled", "true");
+    a.classList.add("is-soon");
   });
   document.querySelectorAll('[data-link="github"]').forEach(a => (a.href = SITE.githubUrl));
   document.querySelectorAll('[data-link="email"]').forEach(a => {
@@ -92,7 +97,6 @@ function initLinks() {
   document.querySelectorAll("[data-socials-empty]").forEach(el => {
     el.hidden = Object.values(SITE.socials).some(Boolean);
   });
-  document.querySelectorAll("[data-steam-pending]").forEach(el => (el.hidden = SITE.steamReady));
   document.querySelectorAll("[data-year]").forEach(el => (el.textContent = new Date().getFullYear()));
 }
 
@@ -158,42 +162,6 @@ function initVideo() {
   box.append(thumb, play);
 }
 
-/* ---------- Galería con visor ---------- */
-function initGallery() {
-  const dlg = document.querySelector(".lightbox");
-  if (!dlg || !dlg.showModal) return;
-  const img = dlg.querySelector("img");
-  const caption = dlg.querySelector(".lightbox__caption");
-  const shots = [...document.querySelectorAll(".gallery button[data-full]")];
-  let current = 0;
-  const show = i => {
-    current = (i + shots.length) % shots.length;
-    const b = shots[current];
-    img.src = b.dataset.full;
-    img.alt = b.querySelector("img")?.alt || "";
-    if (caption) caption.textContent = img.alt;
-  };
-  shots.forEach((b, i) => b.addEventListener("click", () => { show(i); dlg.showModal(); }));
-  dlg.addEventListener("click", e => {
-    if (e.target === dlg || e.target.closest(".lightbox__close")) dlg.close();
-    else if (e.target.closest(".lightbox__nav--prev")) show(current - 1);
-    else if (e.target.closest(".lightbox__nav--next")) show(current + 1);
-  });
-  dlg.addEventListener("keydown", e => {
-    if (e.key === "ArrowLeft") show(current - 1);
-    if (e.key === "ArrowRight") show(current + 1);
-  });
-  // Deslizar con el dedo en el móvil
-  let startX = null;
-  dlg.addEventListener("touchstart", e => (startX = e.touches[0].clientX), { passive: true });
-  dlg.addEventListener("touchend", e => {
-    if (startX == null) return;
-    const dx = e.changedTouches[0].clientX - startX;
-    if (Math.abs(dx) > 50) show(current + (dx < 0 ? 1 : -1));
-    startX = null;
-  });
-}
-
 /* ---------- Boletín ---------- */
 function initNewsletter() {
   const form = document.querySelector("[data-newsletter]");
@@ -204,7 +172,7 @@ function initNewsletter() {
     e.preventDefault();
     const lang = document.documentElement.lang;
     msg.textContent = (lang !== "es" && window.I18N?.[lang]?.["fo.news.pending"])
-      || "El boletín aún no está abierto. Mientras tanto, añade el juego a tu lista de deseados de Steam.";
+      || "El boletín aún no está abierto. Vuelve a pasarte pronto.";
   });
 }
 
@@ -214,6 +182,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initMenu();
   initTopbar();
   initVideo();
-  initGallery();
   initNewsletter();
 });
