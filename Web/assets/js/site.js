@@ -8,8 +8,7 @@ const SITE = {
   // PENDIENTE: id del vídeo de YouTube del tráiler (lo que va tras "watch?v="). Vacío = marcador.
   youtubeId: "",
   githubUrl: "https://github.com/theyoler/Fragments-of-olympus",
-  // PENDIENTE: dirección real de prensa/contacto.
-  email: "contacto@theyoler.studio",
+  email: "theyolerstudio@gmail.com",
   // PENDIENTE: URL de envío del boletín (Buttondown, Mailchimp, Brevo…). Vacío = aviso "aún no disponible".
   newsletterAction: "",
   // PENDIENTE: redes. Las vacías se ocultan.
@@ -102,14 +101,41 @@ function initMenu() {
   const btn = document.querySelector(".menu-btn");
   const nav = document.querySelector(".nav");
   if (!btn || !nav) return;
+  const close = () => { nav.classList.remove("is-open"); btn.setAttribute("aria-expanded", "false"); };
   btn.addEventListener("click", () => {
     const open = nav.classList.toggle("is-open");
     btn.setAttribute("aria-expanded", open);
   });
-  nav.addEventListener("click", e => {
-    if (e.target.closest("a")) { nav.classList.remove("is-open"); btn.setAttribute("aria-expanded", "false"); }
-  });
+  nav.addEventListener("click", e => { if (e.target.closest("a")) close(); });
+  // Se cierra también con Escape o tocando fuera del menú
+  document.addEventListener("keydown", e => { if (e.key === "Escape" && nav.classList.contains("is-open")) { close(); btn.focus(); } });
+  document.addEventListener("click", e => { if (!nav.contains(e.target) && !btn.contains(e.target)) close(); });
 }
+
+/* ---------- Cabecera: sombra al bajar y enlace de la sección visible resaltado ---------- */
+function initTopbar() {
+  const bar = document.querySelector(".topbar");
+  if (!bar) return;
+  const onScroll = () => bar.classList.toggle("is-scrolled", scrollY > 8);
+  addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  const links = new Map();
+  document.querySelectorAll('.nav a[href^="#"]').forEach(a => {
+    const sec = document.querySelector(a.getAttribute("href"));
+    if (sec) links.set(sec, a);
+  });
+  if (!links.size || !("IntersectionObserver" in window)) return;
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      links.forEach(a => a.classList.remove("is-active"));
+      links.get(e.target).classList.add("is-active");
+    });
+  }, { rootMargin: "-45% 0px -50% 0px" });
+  links.forEach((_, sec) => io.observe(sec));
+}
+
 
 /* ---------- Tráiler: carga YouTube solo al pulsar (más ligero y sin cookies hasta entonces) ---------- */
 function initVideo() {
@@ -137,14 +163,35 @@ function initGallery() {
   const dlg = document.querySelector(".lightbox");
   if (!dlg || !dlg.showModal) return;
   const img = dlg.querySelector("img");
-  document.querySelectorAll(".gallery button[data-full]").forEach(b => {
-    b.addEventListener("click", () => {
-      img.src = b.dataset.full;
-      img.alt = b.querySelector("img")?.alt || "";
-      dlg.showModal();
-    });
+  const caption = dlg.querySelector(".lightbox__caption");
+  const shots = [...document.querySelectorAll(".gallery button[data-full]")];
+  let current = 0;
+  const show = i => {
+    current = (i + shots.length) % shots.length;
+    const b = shots[current];
+    img.src = b.dataset.full;
+    img.alt = b.querySelector("img")?.alt || "";
+    if (caption) caption.textContent = img.alt;
+  };
+  shots.forEach((b, i) => b.addEventListener("click", () => { show(i); dlg.showModal(); }));
+  dlg.addEventListener("click", e => {
+    if (e.target === dlg || e.target.closest(".lightbox__close")) dlg.close();
+    else if (e.target.closest(".lightbox__nav--prev")) show(current - 1);
+    else if (e.target.closest(".lightbox__nav--next")) show(current + 1);
   });
-  dlg.addEventListener("click", e => { if (e.target === dlg || e.target.closest(".lightbox__close")) dlg.close(); });
+  dlg.addEventListener("keydown", e => {
+    if (e.key === "ArrowLeft") show(current - 1);
+    if (e.key === "ArrowRight") show(current + 1);
+  });
+  // Deslizar con el dedo en el móvil
+  let startX = null;
+  dlg.addEventListener("touchstart", e => (startX = e.touches[0].clientX), { passive: true });
+  dlg.addEventListener("touchend", e => {
+    if (startX == null) return;
+    const dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 50) show(current + (dx < 0 ? 1 : -1));
+    startX = null;
+  });
 }
 
 /* ---------- Boletín ---------- */
@@ -165,6 +212,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initLinks();
   initLang();
   initMenu();
+  initTopbar();
   initVideo();
   initGallery();
   initNewsletter();
