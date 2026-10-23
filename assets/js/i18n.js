@@ -49,7 +49,7 @@ window.I18N = {
     "fo.chars.kaelen.d": "A centaur warrior who guards the Colosseum with a double-bladed spear. Win the duel and Kaelen joins the Aegis.",
     "fo.chars.scylla.r": "Boss · Sea cave",
     "fo.chars.scylla.n": "Scylla",
-    "fo.chars.scylla.d": "The terror of the straits. Tentacles, fangs and a serpent's gaze you'd better not meet.",
+    "fo.chars.scylla.d": "The terror of the straits. Tentacles, snapping hounds at her waist and serpents that never take their eyes off you.",
     "fo.chars.harpy.r": "Enemy · Beach",
     "fo.chars.harpy.n": "Sea harpy",
     "fo.chars.harpy.d": "Never touches the ground: she circles the beach and dives in with her spear.",
