@@ -27,6 +27,7 @@ window.I18N = {
     "studio.contact.title": "Contact",
     "studio.contact.text": "For press, creators or anything else, write to me at:",
     "studio.footer.text": "Independent game studio.",
+    "footer.privacy": "Privacy policy",
 
     // Fragments of Olympus
     "fo.title": "Fragments of Olympus — Co-op action in mythological Greece",
