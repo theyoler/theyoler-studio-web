@@ -139,3 +139,11 @@ document.addEventListener("DOMContentLoaded", () => {
   initMenu();
   initTopbar();
 });
+
+/* ---------- Aviso del bloqueo de LaLiga ----------
+   sw.js enseña un enlace a la copia de GitHub Pages cuando Cloudflare está bloqueado en España.
+   No se registra en la propia copia (allí no hace falta). */
+if ("serviceWorker" in navigator && !location.hostname.endsWith("github.io")) {
+  const swUrl = new URL("sw.js", document.querySelector('script[src$="site.js"]').src.replace(/assets\/js\/site\.js.*$/, ""));
+  navigator.serviceWorker.register(swUrl, { scope: swUrl.href.replace(/sw\.js$/, "") }).catch(() => {});
+}
